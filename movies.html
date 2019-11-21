@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="demo">
+<h1>Frolic Movies</h1>
+<button type="button" onclick="loadDoc()">Click to get the list</button>
+</div>
+<div id="result"></div>
+
+<script>
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("result").innerHTML =
+      this.responseText;
+
+      var obj=JSON.parse(this.responseText);
+      console.log(obj);
+      var res=" ";
+      for (i=0;i<2;i++){
+      var res=res+"Movie Name : "+obj.results[i].original_title+'</br>'+'</br>';
+      var res=res+"Realese Date : "+obj.results[i].release_date+'</br>'+'</br>';
+      var res=res+"Overview : "+obj.results[i].overview+'</br>'+'</br>'+'</br>';
+   
+      
+
+    }
+    
+      document.getElementById("result").innerHTML=res;
+
+    }
+  };
+  xhttp.open("GET", " https://api.themoviedb.org/3/movie/popular?api_key=668c5807da743f40c7c49311d496cd53&language=en-US&page=1", true);
+  xhttp.send();
+}
+</script>
+
+</body>
+</html>
+

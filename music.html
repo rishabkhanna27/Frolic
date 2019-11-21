@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="demo">
+<h1>Frolic Music</h1>
+<button type="button" onclick="loadDoc()">Click to get the list</button>
+</div>
+<div id="result"></div>
+
+<script>
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("result").innerHTML =
+      this.responseText;
+
+      var obj=JSON.parse(this.responseText);
+      var res=" ";
+      for (i=0;i<20;i++){
+      var res=res+"Track Name : "+obj.result[i].track+'</br>'+'</br>';
+      var res=res+"Artist Name : "+obj.result[i].artist+'</br>'+'</br>';
+      var res=res+"Album Name : "+obj.result[i].album+'</br>'+'</br>'+'</br>';
+      
+
+    }
+
+      document.getElementById("result").innerHTML=res;
+
+    }
+  };
+  xhttp.open("GET", " https://api.happi.dev/v1/music?q=latest&limit=30&apikey=3d5bdfjS6AHioK72hye6vz88yzJtXu5pimV4OSTwL466AbkG2FA9yldX&type=track", true);
+  xhttp.send();
+}
+</script>
+
+</body>
+</html>
+
