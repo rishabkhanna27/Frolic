@@ -1,13 +1,49 @@
 <!DOCTYPE html>
 <html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<style>
+  body{
+    background-image: url("backdata.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    height: 1700px;  
+  }
+#demo {
+  margin: auto;
+  width: 60%;
+  border: 3px solid #73AD21;
+  padding: 10px;
+}
+.result1{
+  color:white;
+    text-align:center;
+    font-size: large;
+}
+    
+.wrapper {
+    text-align: center;
+}
+</style>
+</head>
 <body>
-
 <div id="demo">
-<h1>Frolic Games</h1>
-<button type="button" onclick="loadDoc()">Click to get the list</button>
+<div class="wrapper">
+<h1 style="color:blue;font-size:50px;text-align:center;">Frolic Games</h1>
+<button type="button"  class="btn btn-info"onclick="loadDoc()">Click to get the list</button>
+<button type="button" class="btn btn-warning"><a href="index.html">Back</a></button>
 </div>
-<div id="result"></div>
+</div>
+<div id="result" class="result1">
 
+</div>
 <script>
 function loadDoc() {
   var xhttp = new XMLHttpRequest();
@@ -19,18 +55,12 @@ function loadDoc() {
       var obj=JSON.parse(this.responseText);
       console.log(obj);
       var res=" ";
-      for (i=0;i<2;i++){
+      for (i=0;i<10;i++){
       var res=res+"Name : "+obj.results[i].name+'</br>'+'</br>';
       var res=res+"Realese Date : "+obj.results[i].released+'</br>'+'</br>';
-      var res=res+"Genre : "+obj.results[i].genres[i].name+'</br>'+'</br>'+'</br>';
-     
-   
-      
-
+      var res=res+"Ratings : "+obj.results[i].rating+'</br>'+'</br>'+'</br>';
     }
-    
       document.getElementById("result").innerHTML=res;
-
     }
   };
   xhttp.open("GET", " https://api.rawg.io/api/games", true);

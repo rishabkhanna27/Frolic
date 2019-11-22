@@ -13,20 +13,17 @@ body{
     margin-right:100px;
 }
 #background {
-  
     background-color:#000000;
-    height: 1200px; 
-    
+    height: 1200px;  
 }
 #blank {
-  
     background-color:#6a696b;
     height: 900px; 
     background-image: url("new.png");
     background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
 }
 #btw {
   
@@ -35,13 +32,13 @@ body{
 }
 #btww {
   
-        background-color:#6a696b;
-        height: 50px; 
+    background-color:#6a696b;
+    height: 50px; 
 }
 #btwww {
   
-            background-color:#6a696b;
-            height: 50px; 
+    background-color:#6a696b;
+    height: 50px; 
 }
 #btwwww {
   
@@ -51,16 +48,12 @@ body{
 .mySlides {
     display:none;
     margin: auto;
-  width: 380%;
-
-padding: 100px;
-  padding-right: 150px;
-  padding-left: 160px;
-
+    width: 380%;
+    padding: 100px;
+    padding-right: 150px;
+    padding-left: 160px;
 }
-
-#bt {
-  
+#bt { 
     background-color:#000000;
     height: 50px; 
 }
@@ -69,18 +62,16 @@ p{
     font-size: 20px;
 }
 .row{
-    height:100px;
-
-    
+    height:100px;  
 }
 #circle{
     background-image: url("back3.jpeg ");
-  background-color: #000000;
-  height: 1000px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
+    background-color: #000000;
+    height: 1000px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
 }
 .halfCircleBottom{
  
@@ -90,13 +81,13 @@ p{
     background:#000000;
 }
 #back{
-  background-image: url("black.jpg ");
-  background-color: #000000;
-  height: 700px;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  position: relative;
+    background-image: url("black.jpg ");
+    background-color: #000000;
+    height: 700px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
 }
 #back1{
     background-image: url("black.jpg ");
@@ -158,23 +149,22 @@ p{
 }
 
 #contact {
-  writing-mode: horizontal-tb; 
-  display:flex; 
-  justify-content:center;
-  /*float:left;*/
-  align-items:stretch;
-  }
-  #con{
+    writing-mode: horizontal-tb; 
+    display:flex; 
+    justify-content:center;
+    align-items:stretch;
+}
+#con{
     text-align:center;
     color:black; 
     font-size:40px
-  }
-  p{
-      color:white;
-      text-align:center;
-      font-size: large;
-  }
-  .btn
+}
+p{
+    color:white;
+    text-align:center;
+    font-size: large;
+}
+.btn
 {
 	padding: 10px 30px;
 	color:cyan;
@@ -186,6 +176,5 @@ p{
 	position: absolute;
 	top: 80%;
 	left: 50%;
-    transform: translate(-50%,-50%);
-    
+    transform: translate(-50%,-50%); 
 }
